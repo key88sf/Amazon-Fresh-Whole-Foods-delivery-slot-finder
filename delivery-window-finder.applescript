@@ -229,7 +229,7 @@ if javascriptEnabled then
 			end if
 			
 			-- wait for the page to load
-			delay 30
+			delay 15
 			
 			-- get the text on the page
 			set siteText to (text of last tab of window id amzn_win_id) as string
@@ -248,7 +248,7 @@ if javascriptEnabled then
 			log "no slots found"
 			
 			-- delay so you don't spam Amazon's site
-			delay 10
+			delay random number from 2 to 10
 		else if siteText contains oos_keyword then
 			-- landed on out of stock page
 			
@@ -299,7 +299,7 @@ if javascriptEnabled then
 				-- Credit for fill to screen: https://macosxautomation.com/applescript/firsttutorial/18.html
 				tell application "System Events"
 					tell application "Finder" to get the bounds of the window of the desktop
-					tell application "Safari" to set the bounds of the front window to Â
+					tell application "Safari" to set the bounds of the front window to ï¿½
 						{0, 22, (3rd item of the result), (4th item of the result)}
 				end tell
 			end tell
